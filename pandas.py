@@ -410,46 +410,330 @@ import pandas as pd
 df = pd.read_json("sales1234.json")
 print(df)
 
+import pandas as pd
+df = pd.read_excel("sales1.xlsx")
+print(df)
+
+import pandas as pd
+df = pd.read_table("sales1.tsv")
+print(df)
 
 
+import pandas as pd
+url = 'https://en.wikipedia.org/wiki/The_World%27s_Billionaires'
+df_list = pd.read_html(url)
+print(df_list[2])
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print("Total number of rows in DataFrame:", len(df))
 
 
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.columns)
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.shape)
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.shape[0])
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.shape[1])
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.size)
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print("Number of elements in DataFrame:", df.size)
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print("Number of elements in DataFrame:", df.size)
+print("Number of elements in DataFrame:",df.shape[0]*df.shape[1])
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.dtypes)
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.empty)
+
+import pandas as pd
+df = pd.DataFrame()
+print(df)
+print()
+print(df.empty)
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.index)
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.values)
 
 
+import pandas as pd
+details = [["Sagar", 20, 10000], ["Daniel", 16, 20000], ["Veeru", 24,
+30000], ["Raju", 25, 40000], ["Kiran", 26, 50000], ["Kedar", 27,
+60000], ["Reena", 28, 70000]]
+df = pd.DataFrame(details, columns = ["Name", "Age", "Salary"])
+print(df)
+print()
+print(df.T)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+df2 = df1.head()
+print(df2)
 
 
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+df2 = df1.tail()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+df1.info()
+
+import pandas as pd
+df1 = pd.read_csv("sales1_with_nan.csv")
+df1.info()
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+c = df1.count()
+print(c)
 
 
+import pandas as pd
+df1 = pd.read_csv("sales1_with_nan.csv")
+c = df1.count()
+print(c)
 
 
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+df2 = df1.describe()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+df2 = df1.nunique()
+print(df2)
 
 
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.Product)
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df["Product"])
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df[["Customer Name", "Product"]])
 
 
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+total = df['Quantity'].sum()
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df)
+
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+df = df[["Product", "Customer Name", "Quantity", "Order ID"]]
+print(df)
+
+import pandas as pd
+df = pd.read_csv("sales3.csv")
+print(df.head())
+print()
+print(df.columns)
+
+import pandas as pd
+df1 = pd.read_csv("sales3.csv")
+d = {
+"ord id": "Order Id"
+}
+df2 = df1.rename(columns = d)
+print(df1.head())
+print()
+print(df2.head())
 
 
+import pandas as pd
+df1 = pd.read_csv("sales3.csv")
+d = {
+"orddddd id": "Order Id"
+}
+df2 = df1.rename(columns = d)
+print(df1.head())
+print()
+print(df2.head())
 
 
+import pandas as pd
+df1 = pd.read_csv("sales3.csv")
+d = {
+'ord id': 'Order Id',
+'cust name': 'Customer Name',
+'cust id': 'Customer Id',
+'prod name': 'Product Name',
+'prod cost': 'Product Cost'
+}
+df2 = df1.rename(columns = d)
+print(df1.head())
+print()
+print(df2.head())
+
+import pandas as pd
+df1 = pd.read_csv("sales3.csv")
+d = {
+"ord id": "order_id",
+"cust name": "customer_name",
+"cust id": "customer_id",
+"prod name": "product_name",
+"prod cost": "product_cost"
+}
+df2 = df1.rename(columns = d)
+print(df1.head())
+print()
+print(df2.head())
 
 
+import pandas as pd
+df1 = pd.read_csv("sales3.csv")
+print(df1.head())
+df1.columns = [
+"order_id",
+"customer_name",
+"customer_id",
+"product_name",
+"product_cost"
+]
+print()
+print(df1.head())
 
 
+import pandas as pd
+df1 = pd.read_csv("sales3.csv")
+print(df1.head())
+df1.columns = [
+"order_id",
+"customer_name",
+"customer_id",
+"product_name",
+"product_cost",
+"total"
+]
+print()
+print(df1.head())
 
 
+import pandas as pd
+d = {
+"order_id": [11, 21, 31],
+"customer_name": ["Prasad", "Daniel", "Jeswanth"],
+"product": ["iPhone", "hTC", "macbook"]
+}
+df1 = pd.DataFrame(d)
+print(df1)
+
+import pandas as pd
+d = {
+"order_id": [11, 21, 31],
+"customer_name": ["Prasad", "Daniel", "Jeswanth"],
+"product": ["iPhone", "hTC", "macbook"]
+}
+i = {0: 77, 1: 88, 2: 99}
+df1 = pd.DataFrame(d)
+df2 = df1.rename(index = i)
+print(df1)
+print()
+print(df2)
 
 
+import pandas as pd
+d = {
+"order_id": [11, 21, 31],
+"customer_name": ["Prasad", "Daniel", "Jeswanth"],
+"product": ["iPhone", "hTC", "macbook"]
+}
+df1 = pd.DataFrame(d)
+print(df1)
+df1.index = [77, 88, 99]
+print()
+print(df1)
 
 
+import pandas as pd
+df1 = pd.read_csv("sales31.csv")
+print(df1)
+df1.index = range(10, 20)
+print()
+print(df1)
 
 
+import pandas as pd
+d = {
+"Ord Id": [11, 21, 31],
+"Customer Name": ["Prasad", "Daniel", "Jeswanth"],
+"Product": ["iPhone", "hTC", "macbook"]
+}
+df1 = pd.DataFrame(d)
+print(df1)
+df1.index = [333, 444, 555]
+df1.columns = ["order_id", "customer_name", "product"]
+print()
+print(df1)
+
+import pandas as pd
+df1 = pd.read_csv("sales3.csv")
+print(df1.head())
+df1.columns = df1.columns.str.upper()
+print()
+print(df1.head())
 
 
+import pandas as pd
+df1 = pd.read_csv("sales3.csv")
+d = {"ord id": "order_id", "cust name": "customer_name", "cust
+id": "customer_id", "prod name": "product_name", "prod cost":
+"product_cost"}
+print(df1.head())
+df1.rename(columns = d)
+print()
+print(df1.head())
+
+import pandas as pd
+df1 = pd.read_csv("sales3.csv")
+d = {"ord id": "order_id", "cust name": "customer_name", "cust
+id": "customer_id", "prod name": "product_name", "prod cost":
+"product_cost"}
+print(df1.head())
+df1.rename(columns = d, inplace = True)
+print()
+print(df1.head())
 
 
-
-
-
-
+import pandas as pd
+df1 = pd.read_csv("sales1_with_nan.csv")
+c = df1.count()
+print(c)
 
 import pandas as pd
 df = pd.read_csv("fruits1.csv")
