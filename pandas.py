@@ -411,3 +411,237 @@ df = pd.read_json("sales1234.json")
 print(df)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import pandas as pd
+df = pd.read_csv("fruits1.csv")
+print(df)
+
+import pandas as pd
+df1 = pd.read_csv("fruits1.csv")
+df2 = df1.isna()
+print(df1)
+print()
+print(df2)
+
+import pandas as pd
+df1 =pd.read_csv("fruits1.csv")
+df2 =df1.notnull()
+print(df1)
+print()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("fruits1.csv")
+df2 =df1.isnull().sum()
+print(df1)
+print()
+print(df2)
+
+
+import pandas as pd
+df1 = pd.read_csv("fruits1.csv")
+df2 = df1.isnull().sum()
+per = (df2*100)/len(df1)
+print(per)
+
+import pandas as pd
+df1 = pd .read_csv("fruits1.csv")
+s = df1.isnull().sum()
+per = (s*100)/len(df1)
+print(per)
+
+import pandas as pd
+df1 = pd.read_csv("fruits1.csv")
+df2 = df1.dropna()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("fruits1.csv")
+df2 = df1.dropna()
+s= df2.isnull().sum()
+print(s)
+
+import pandas as pd
+df1 =pd.read_csv("fruits1.csv")
+df2= df1.dropna()
+df3 = df2.astype(int)
+print(df2)
+print()
+print(df3)
+
+import pandas as pd
+df1 =pd.read_csv("fruits1.csv")
+df2= df1.dropna()
+df3 = df2.astype(int)
+print(df2.head())
+print()
+print(df3.head())
+
+
+
+import pandas as pd
+df1 =pd.read_csv("fruits1.csv")
+df1.dropna(inplace = True)
+df2 = df1.astype(int)
+print(df2)
+
+import pandas as pd
+df1 =pd.read_csv("fruits1.csv")
+df1.dropna(inplace = True)
+df2 = df1.astype(int)
+print(df1.head())
+print(df2.head())
+
+import pandas as pd
+df1 = pd.read_csv("fruits1.csv")
+df2 = df1.fillna(0)
+print(df2)
+
+import pandas as pd
+df1 =pd.read_csv("fruits1.csv")
+df2 = df1.fillna(0)
+df3 = df2.astype(int)
+print(df2.head())
+print()
+print(df3.head())
+
+import pandas as pd
+import numpy as np
+data = [
+    ["Rajan", 26, 40000],
+    ["Daniel", 16, 20000],
+    ["Veeru", 45, 90000],
+    ["Venkat", np.nan, 45000],
+    ["Sumanth", 20, 95000],
+    ["Shafi", np.nan, 97000]
+]
+df1 = pd.DataFrame(data, columns = ['Name', 'Age', 'Salary'])
+df2 = df1.fillna(0)
+print(df1)
+print()
+print(df2)
+
+
+import pandas as pd
+import numpy as np
+data = [
+["Rajan", 26, 40000],
+["Daniel", 16, 20000],
+["Veeru", 45, 90000],
+["Venkat", np.nan, 45000],
+["Sumanth", 20, 95000],
+["Shafi", np.nan, 97000]
+]
+df1 = pd.DataFrame(data, columns = ['Name', 'Age', 'Salary'])
+df2 = df1.fillna(22)
+print(df1)
+print()
+print(df2)
+
+import pandas as pd
+import numpy as np
+data = [
+["Rajan", 26, 40000],
+["Daniel", 16, 20000],
+["Veeru", 45, 90000],
+["Venkat", np.nan, 45000],
+["Sumanth", 20, 95000],
+["Shafi", np.nan, 97000]
+]
+df1 = pd.DataFrame(data, columns = ['Name', 'Age', 'Salary'])
+a = df1['Age'].mean()
+df1['Age'] = df1['Age'].fillna(a)
+print()
+print(df1)
+
+import pandas as pd
+import numpy as np
+data = [
+    ['Shahid', np.nan, 40000],
+    ['Daniel', 16, 20000],
+    ['Veeru', 45, 90000],
+    ['Sumanth', 20, 95000]
+ ]
+df1 = pd.DataFrame(data, columns = ['Name', 'Age', 'Salary'])
+print(df1)
+df2 = df1.replace(np.nan, 0)
+print()
+print(df2)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+print(df1.product)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+print(df1.Product)
+per = (df1*100)/len(df1)
+print(per)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+a = df1["Product"]
+print(a)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+cols =["Customer Name","Product"]
+df2 = df1[cols]
+print(df2)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+total =df1["Quantity"].sum()
+print(total)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+print(df1)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+cust_name = df1["Customer Name"] == "Veeru"
+print(df1[cust_name])
+
+
