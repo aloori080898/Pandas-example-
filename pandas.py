@@ -2098,3 +2098,32 @@ df2 = df1.drop([1, 2], axis = 0)
 print(df1.head())
 print()
 print(df2.head())
+
+import os
+path = "./daniel"
+all_files = os.listdir(path)
+print(all_files)
+
+import os
+path = "./daniel"
+all_files = os.listdir(path)
+f = filter(lambda name: name.endswith('.csv'), all_files)
+csv_files = list(f)
+print(all_files)
+print()
+print(csv_files)
+
+import os
+import glob
+import pandas as pd
+p = '.\daniel'
+files = os.path.join(p, "*.csv")
+csv_files = glob.glob(files)
+result = (pd.read_csv(every) for every in csv_files)
+df = pd.concat(result, ignore_index = True)
+print(df)
+df.to_csv("year.csv", index = False)
+
+import pandas as pd
+df = pd.read_csv("year.csv", parse_dates = ["Date"])
+print(df)
