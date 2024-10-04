@@ -1357,3 +1357,744 @@ print(df1)
 print()
 print(df2)
 
+     import pandas as pd
+d = {
+"Product": ["Samsung", "Nokia", "Samsung", "Motorola",
+"Nokia", "Samsung", "Samsung"],
+"Orders": [2, 4, 3, 4, 6, 7, 3]
+}
+df1 = pd.DataFrame(d)
+print(df1)
+
+import pandas as pd
+d = {
+"Product": ["Samsung", "Nokia", "Samsung", "Motorola",
+"Nokia", "Samsung", "Samsung"],
+"Orders": [2, 4, 3, 4, 6, 7, 3]
+}
+df1 = pd.DataFrame(d)
+grouped = df1.groupby(["Product"])
+result = grouped.sum()
+print(df1)
+print()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+grouped = df1.groupby(["Mail_Id"])
+result = grouped.size()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+grouped = df1.groupby(["Product_Name"])
+result = grouped.size()
+print(result)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+cols = ['Date', 'Product_Name']
+grouped = df1.groupby(cols)['Date']
+result = grouped.count()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+cols = ['Product_Name','Date']
+grouped = df1.groupby(cols)['Date']
+result = grouped.count()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+cols = ['Mail_Id', 'Date']
+grouped = df1.groupby(cols)['Mail_Id']
+result = grouped.count()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col = ['Mail_Id', 'Product_Name']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col = ['Mail_Id','Product_Name']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Mail_Id','Product_Name']
+grouped = df1.groupby(col,as_index = False)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Mail_Id']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Product_Name']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Date']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+df2 = df1['Product_Cost'].describe()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+df2 = df1['Product_Name'].describe()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+d = {
+'Product_Cost' : sum
+}
+cols = ['Date', 'Product_Name']
+grouped = df1.groupby(cols)
+result = grouped.agg(d)
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+d = {
+'Product_Cost' : sum,
+'Product_Name': "count"
+}
+cols = ['Date', 'Product_Name']
+grouped = df1.groupby(cols)
+result = grouped.agg(d)
+print(result)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+d = {
+'Product_Cost' : ['min','max','sum']
+}
+cols = ['Product_Cost']
+grouped = df1.groupby(cols)
+result = grouped.agg(d)
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+grouped = df1.groupby(["Product_Name"])
+result = grouped.size()
+print(result)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+cols = ['Date', 'Product_Name']
+grouped = df1.groupby(cols)['Date']
+result = grouped.count()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+cols = ['Product_Name','Date']
+grouped = df1.groupby(cols)['Date']
+result = grouped.count()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+cols = ['Mail_Id', 'Date']
+grouped = df1.groupby(cols)['Mail_Id']
+result = grouped.count()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col = ['Mail_Id', 'Product_Name']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col = ['Mail_Id','Product_Name']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Mail_Id','Product_Name']
+grouped = df1.groupby(col,as_index = False)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Mail_Id']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Product_Name']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Date']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+df2 = df1['Product_Cost'].describe()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+df2 = df1['Product_Name'].describe()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+d = {
+'Product_Cost' : sum
+}
+cols = ['Date', 'Product_Name']
+grouped = df1.groupby(cols)
+result = grouped.agg(d)
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+d = {
+'Product_Cost' : sum,
+'Product_Name': "count"
+}
+cols = ['Date', 'Product_Name']
+grouped = df1.groupby(cols)
+result = grouped.agg(d)
+print(result)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+d = {
+'Product_Cost' : ['min','max','sum']
+}
+cols = ['Product_Cost']
+grouped = df1.groupby(cols)
+result = grouped.agg(d)
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+grouped = df1.groupby(["Product_Name"])
+result = grouped.size()
+print(result)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+cols = ['Date', 'Product_Name']
+grouped = df1.groupby(cols)['Date']
+result = grouped.count()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+cols = ['Product_Name','Date']
+grouped = df1.groupby(cols)['Date']
+result = grouped.count()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+cols = ['Mail_Id', 'Date']
+grouped = df1.groupby(cols)['Mail_Id']
+result = grouped.count()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col = ['Mail_Id', 'Product_Name']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col = ['Mail_Id','Product_Name']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Mail_Id','Product_Name']
+grouped = df1.groupby(col,as_index = False)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Mail_Id']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Product_Name']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+col =['Date']
+grouped = df1.groupby(col)['Product_Cost']
+result = grouped.sum()
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+df2 = df1['Product_Cost'].describe()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+df2 = df1['Product_Name'].describe()
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+d = {
+'Product_Cost' : sum
+}
+cols = ['Date', 'Product_Name']
+grouped = df1.groupby(cols)
+result = grouped.agg(d)
+print(result)
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+d = {
+'Product_Cost' : sum,
+'Product_Name': "count"
+}
+cols = ['Date', 'Product_Name']
+grouped = df1.groupby(cols)
+result = grouped.agg(d)
+print(result)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales5.csv")
+d = {
+'Product_Cost' : ['min','max','sum']
+}
+cols = ['Product_Cost']
+grouped = df1.groupby(cols)
+result = grouped.agg(d)
+print(result)
+
+import pandas as pd
+d1 = {
+"Id": [1, 2, 3, 4, 5, 6],
+"Name": ["Pradhan", "Venu", "Madhurima", "Nireekshan",
+"Shafi", "Veeru"],
+"Subject": ["English", "Java", "Html", "Python", "C", "dotnet"]
+}
+d2 = {
+"Id": [11, 12, 13, 14, 15, 16],
+"Name": ["Srinu", "Sumanth", "Neelima", "Daniel", "Arjun",
+"Veeru"],
+"Subject": ["Java", "Html", "Cpp", "Python", "C", "dot net"]
+}
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+print(df1)
+print()
+print(df2)
+
+import pandas as pd
+d1 = {
+"Id":[1, 2, 3, 4, 5, 6],
+"Name": ["Pradhan", "Venu", "Madhurima", "Nireekshan",
+"Shafi", "Veeru"],
+"Subject":["English", "Java", "Html", "Python", "C", "dotnet"]
+}
+d2 = {
+"Id":[11, 12, 13, 14, 15, 16],
+"Name": ["Srinu", "Sumanth", "Neelima", "Daniel", "Arjun",
+"Veeru"],
+"Subject":["Java", "Html", "Cpp", "Python", "C", "dot net"]
+}
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+inn_join = pd.merge(df1, df2, on = "Subject", how = "inner")
+print(df1)
+print()
+print(df2)
+print()
+print(inn_join)
+
+import pandas as pd
+d1 = {
+"Id":[1, 2, 3, 4, 5, 6],
+"Name": ["Pradhan", "Venu", "Madhurima", "Nireekshan",
+"Shafi", "Veeru"],
+"Subject":["English", "Java", "Html", "Python", "C", "dotnet"]
+}
+d2 = {
+"Id":[11, 12, 13, 14, 15, 16],
+"Name": ["Srinu", "Sumanth", "Neelima", "Daniel", "Arjun",
+"Veeru"],
+"Subject":["Java", "Html", "Cpp", "Python", "C", "dot net"]
+}
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+left_join = pd.merge(df1, df2, on = "Subject", how = "left")
+print(df1)
+print()
+print(df2)
+print()
+print(left_join)
+
+import pandas as pd
+d1 = {
+"Id":[1, 2, 3, 4, 5, 6],
+"Name": ["Pradhan", "Venu", "Madhurima", "Nireekshan",
+"Shafi", "Veeru"],
+"Subject":["English", "Java", "Html", "Python", "C", "dotnet"]
+}
+d2 = {
+"Id":[11, 12, 13, 14, 15, 16],
+"Name": ["Srinu", "Sumanth", "Neelima", "Daniel", "Arjun",
+"Veeru"],
+"Subject":["Java", "Html", "Cpp", "Python", "C", "dot net"]
+}
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+right_join = pd.merge(df1, df2, on = "Subject", how = "right")
+print(df1)
+print()
+print(df2)
+print()
+print(right_join)
+
+import pandas as pd
+d1 = {
+"Id":[1, 2, 3, 4, 5, 6],
+"Name": ["Pradhan", "Venu", "Madhurima", "Nireekshan",
+"Shafi", "Veeru"],
+"Subject":["English", "Java", "Html", "Python", "C", "dotnet"]
+}
+d2 = {
+"Id":[11, 12, 13, 14, 15, 16],
+"Name": ["Srinu", "Sumanth", "Neelima", "Daniel", "Arjun",
+"Veeru"],
+"Subject":["Java", "Html", "Cpp", "Python", "C", "dot net"]
+}
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+outer_join = pd.merge(df1, df2, on = "Subject", how = "outer")
+print(df1)
+print()
+print(df2)
+print()
+print(outer_join)
+
+import pandas as pd
+d1 = {
+"Employee": ["Nireekshan", "Veeru", "Lavanya", "Pradhan"],
+"Group": ["Development", "Testing", "Testing", "HR"]
+}
+d2 = {
+"Employee": ["Lavanya", "Nireekshan", "Veeru", "Pradhan"],
+"Hire_date": [2010, 2012, 2014, 2016]
+}
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+one_one = pd.merge(df1,df2)
+print(df1)
+print()
+print(df2)
+print()
+print(one_one)
+
+import pandas as pd
+d1 = {
+"Employee": ["Nireekshan", "Veeru", "Lavanya", "Pradhan"],
+"Group": ["Development", "Testing", "Testing", "HR"]
+}
+d2 = {
+"Employee": ["Lavanya", "Nireekshan", "Veeru", "Pradhan"],
+"Hire_date": [2010, 2012, 2014, 2016]
+}
+d3 = {
+"Group": ["Testing", "Development", "HR"],
+"supervisor": ["Shafi", "Daniel", "Neelima"]
+}
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+df3 = pd.DataFrame(d3)
+one_one = pd.merge(df1,df2)
+many_one = pd.merge(one_one,df3)
+print(df1)
+print()
+print(df2)
+print()
+print(many_one)
+
+import pandas as pd
+d1 = {
+"Employee": ["Nireekshan", "Veeru", "Lavanya", "Pradhan"],
+"Group": ["Development", "Testing", "Testing", "HR"]
+}
+d2 = {
+"Group": ["Testing", "Testing", "Development","Development", "HR", "HR"],
+"Skills": ["Manual", "Automation", "Coding", "Logical","Spreadsheets", "Organization"]
+}
+
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+many_many = pd.merge(df1, df2)
+print(df1)
+print()
+print(df2)
+print()
+print(many_many)
+
+
+import pandas as pd
+d1 = {
+"Id":[1, 2, 3, 4, 5, 6],
+"Name": ["Pradhan", "Venu", "Madhurima", "Nireekshan","Shafi", "Veeru"],
+"Subject":["English", "Java", "Html", "Python", "C", "dott"]
+}
+d2 = {
+"Id":[11, 12, 13, 14, 15, 16],
+"Name": ["Srinu", "Sumanth", "Neelima", "Daniel", "Arjun",
+"Veeru"],
+"Subject":["Java", "Html", "Cpp", "Python", "C", "dot net"]
+}
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+result =  pd.merge(df1,df2, on = "Subject")
+print(df1)
+print()
+print(df2)
+print()
+print(result)
+
+import pandas as pd
+d1 = {
+"Id":[1, 2, 3, 4, 5, 6],
+"Name": ["Pradhan", "Venu", "Madhurima", "Nireekshan","Shafi", "Veeru"],
+"Subject":["English", "Java", "Html", "Python", "C", "dott"]
+}
+d2 = {
+"Id":[11, 12, 13, 14, 15, 16],
+"Name": ["Srinu", "Sumanth", "Neelima", "Daniel", "Arjun",
+"Veeru"],
+"Subject":["Java", "Html", "Cpp", "Python", "C", "dot net"]
+}
+df1 = pd.DataFrame(d1)
+df2 = pd.DataFrame(d2)
+result =  pd.merge(df1,df2, on = ["Subject","Name"])
+print(df1)
+print()
+print(df2)
+print()
+print(result)
+
+import pandas as pd 
+d1 = [[11, 22], [33, 44]]
+d2 = [[55, 66], [77, 88]]
+c1 = ["A", "B"]
+df1 = pd.DataFrame(d1, columns = c1)
+df2 = pd.DataFrame(d2, columns = c1)
+print(df1)
+print()
+print(df2)
+
+import pandas as pd 
+d1 = [[11, 22], [33, 44]]
+d2 = [[55, 66], [77, 88]]
+c1 = ["A", "B"]
+df1 = pd.DataFrame(d1, columns = c1)
+df2 = pd.DataFrame(d2, columns = c1)
+result = [df1,df2]
+print(df1)
+print()
+print(df2)
+print()
+print(result)
+
+import pandas as pd 
+d1 = [[11, 22], [33, 44]]
+d2 = [[55, 66], [77, 88]]
+c1 = ["A", "B"]
+df1 = pd.DataFrame(d1, columns = c1)
+df2 = pd.DataFrame(d2, columns = c1)
+result = [df1,df2]
+df3 = pd.concat(result)
+print(df1)
+print()
+print(df2)
+print()
+print(df3)
+
+import pandas as pd 
+d1 = [[11, 22], [33, 44]]
+d2 = [[55, 66], [77, 88]]
+c1 = ["A", "B"]
+df1 = pd.DataFrame(d1, columns = c1)
+df2 = pd.DataFrame(d2, columns = c1)
+result = [df1,df2]
+df3 = pd.concat(result,ignore_index = True )
+print(df1)
+print()
+print(df2)
+print()
+print(df3)
+
+import pandas as pd 
+d1 = [[11, 22], [33, 44]]
+d2 = [[55, 66], [77, 88]]
+c1 = ["A", "B"]
+df1 = pd.DataFrame(d1, columns = c1)
+df2 = pd.DataFrame(d2, columns = c1)
+result = [df1,df2]
+df3 = pd.concat(result,ignore_index = False )
+print(df1)
+print()
+print(df2)
+print()
+print(df3)
+
+import pandas as pd
+d1 = [[11, 22], [33, 44]]
+d2 = [[55, 66], [77, 88]]
+c1 = ["A", "B"]
+c2 = ["X", "Y"]
+df1 = pd.DataFrame(d1, columns = c1)
+df2 = pd.DataFrame(d2, columns = c2)
+print(df1)
+print()
+print(df2)
+
+import pandas as pd
+d1 = [[11, 22], [33, 44]]
+d2 = [[55, 66], [77, 88]]
+c1 = ["A", "B"]
+c2 = ["X", "Y"]
+df1 = pd.DataFrame(d1, columns = c1)
+df2 = pd.DataFrame(d2, columns = c2)
+result = [df1, df2]
+df3 = pd.concat(result, axis = 1)
+print(df1)
+print()
+print(df2)
+print()
+print(df3)
+
+import pandas as pd
+d1 = [[11, 22], [33, 44]]
+d2 = [[55, 66], [77, 88]]
+c1 = ["A", "B"]
+c2 = ["X", "Y"]
+df1 = pd.DataFrame(d1, columns = c1)
+df2 = pd.DataFrame(d2, columns = c2)
+result = [df1, df2]
+df3 = pd.concat(result, ignore_index = True )
+print(df1)
+print()
+print(df2)
+print()
+print(df3)
+
+import pandas as pd
+df = pd.read_csv("sales8.csv")
+print(df.head(5))
+
+import pandas as pd
+df = pd.read_csv("sales8.csv")
+df['Status'] = "Delivered"
+print(df.head())
+
+import pandas as pd
+df = pd.read_csv("sales8.csv")
+df["Total Cost"] = df['Product cost']*df['Quantity']
+print(df.head(5))
+
+import pandas as pd
+df = pd.read_csv("sales8.csv")
+def total(df):
+    t = df['Product cost'] * df['Quantity']
+    return t
+df['Total cost'] = df.apply(total, axis = 1)
+print(df.head())
+
+import pandas as pd
+df = pd.read_csv("sales8.csv")
+print(df.head())
+new = df['Product cost'] * df['Quantity']
+df.insert(5,"Total Cost", new)
+print()
+print(df.head(5))
+
+import pandas as pd
+df1 = pd.read_csv("sales8.csv")
+df2 = df1.drop(columns = 'Customer name')
+print(df1.head())
+print()
+print(df2.head())
+
+import pandas as pd
+df1 = pd.read_csv("sales8.csv")
+df2 = df1.drop(['Customer name', 'Product name'], axis = 1)
+print(df1.head())
+print()
+print(df2.head())
+
+import pandas as pd
+df1 = pd.read_csv("sales8.csv")
+df2 = df1.drop(3, axis = 0)
+print(df1.head())
+print()
+print(df2.head())
+
+import pandas as pd
+df1 = pd.read_csv("sales8.csv")
+df2 = df1.drop([1, 2], axis = 0)
+print(df1.head())
+print()
+print(df2.head())
