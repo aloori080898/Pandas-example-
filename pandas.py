@@ -25,13 +25,10 @@ s = pd.Series(m)
 print(s)
 print(type(s))
 
-
-
 import pandas as pd
 m = [10,30,40,50,50,60]
 s = pd.Series(m,name = "Smarks")
 print(s)
-
 
 import pandas as pd
 m = ["raju","karthik","praveen","vamshi"]
@@ -927,5 +924,436 @@ import pandas as pd
 df1 = pd.read_csv("sales1.csv")
 cust_name = df1["Customer Name"] == "Veeru"
 print(df1[cust_name])
+import pandas as pd
+df = pd.read_csv("sales1.csv")
+print(df.Product)
 
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+s = df["Product"]
+print(s)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+cols = ["Customer Name", "Product"]
+df2 = df1[cols]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+total = df1["Quantity"].sum()
+print(total)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+print(df1)
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+cust_name = df1["Product"] == "Veeru"
+print(df1[cust_name])
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+cust_name = df1["Customer Name"] == "Veeru"
+print(df1[cust_name])
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+prod_name = df1["Product"] == "Macbook Pro Laptop"
+print(df1[prod_name])
+
+import pandas as pd
+df1 = pd.read_csv("sales1.csv")
+cust_name = df1["Product"] == "Prasad"
+print(df1[cust_name])
+
+import pandas as pd
+df1 = pd.read_csv("sales2.csv")
+print(df2)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales2.csv")
+print(df1)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[0]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[1]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[2]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[-1]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[-2]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc["Order id"]
+print(s)
+
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,0]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,1]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,2]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,4]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,6]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,-1]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[0:5]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,0:2]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,0:3]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,0:4]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[:,0:-1]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[0:5,0:2]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[0:5,0:3]
+print(s)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+s = df1.iloc[0:5,0:4]
+print(s)
+
+
+import pandas as pd
+df1 = pd.read_csv("sales2.csv")
+print(df1)
+
+import pandas as pd
+df1 = pd.read_csv("sales2.csv")
+df1.set_index("Product name", inplace = True)
+print(df1)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+df1.set_index("Product name", inplace =True)
+a = 'iPhone 9'
+df2 = df1.loc[a]
+print(df2.head(10))
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+df1.set_index("Product name", inplace =True)
+a = 'ThinkPad Laptop'
+df2 = df1.loc[a]
+print(df2.head(10))
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+df1.set_index("Product name", inplace = True)
+a = ['iPhone 9', 'iPhone 11']
+df2 = df1.loc[a]
+print(df2)
+
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+df1.set_index("Product name", inplace = True)
+a = ['ThinkPad Laptop', '27in FHD Monitor']
+df2 = df1.loc[a]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+df1.set_index("Product name", inplace = True)
+a = ['iPhone 9', 'ThinkPad Laptop']
+b = ['Product cost', 'Customer id']
+df2 = df1.loc[a, b]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+df1.set_index("Product name", inplace = True)
+a = ['iPhone 9', 'ThinkPad Laptop']
+b = ['Product cost', 'Customer name']
+df2 = df1.loc[a, b]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+df1.set_index("Product name", inplace = True)
+a = ['iPhone 8', 'Google Phone']
+df2 = df1.loc[a, 'Order id' : 'Product cost']
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+df1.set_index("Product name", inplace = True)
+a = ['iPhone 8', 'Google Phone']
+df2 = df1.loc[a, 'Order id' : 'Customer id']
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+a = df1['Product name'] == 'LG Washing Machine'
+df2 = df1.loc[a]
+print(df2.head())
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+a = df1['Product name'] == 'LG Washing Machine'
+df2 = df1.loc[a, 'Order id' : 'Product cost']
+print(df2.head())
+
+import pandas as pd
+df1 = pd.read_csv('sales2.csv')
+a = df1['Customer name'] == 'Sagar'
+df2 = df1.loc[a, 'Product name' : 'Product cost']
+print(df2.head())
+
+import pandas as pd
+df = pd.read_csv("sales4.csv")
+print(df)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+con1 = df1['Product_Cost'] > 65000
+df2 = df1[con1]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+con1 = df1['Product_Cost'] > 70000
+df2 = df1[con1]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+con1 = df1['Product_Cost'] > 50000
+con2 = df1['Product_Cost'] < 60000
+df2 = df1[con1 & con2]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+con1 = df1.Product_Name == "iPhone 11"
+con2 = df1.Customer_Name == "Nireekshan"
+df2 = df1[con1 & con2]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+con1 = df1.Product_Name == "iPhone 11"
+con2 = df1.Customer_Name == "Shahid"
+df2 = df1[con1 & con2]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+con1 = df1.Product_Name == "iPhone 11"
+con2 = df1.Customer_Name == "Shahid"
+df2 = df1.loc[con1 & con2]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+df2 = df1.iloc[:5, ]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+rows = df1.index[0:]
+cols = ["Product_Name", "Customer_Id"]
+df2 = df1.loc[rows, cols]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+rows = df1.index[0:4]
+cols = ["Product_Name", "Customer_Id"]
+df2 = df1.loc[rows, cols]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+rows = df1.index[5:]
+cols = ["Product_Name", "Customer_Id"]
+df2 = df1.loc[rows, cols]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+a = df1.Product_Name == "LG Washing Machine"
+b = df1.Customer_Id == 1
+c = a | b
+df2 = df1.loc[c]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+a = ["Macbook Pro Laptop"]
+b = df1.Product_Name.isin(a)
+df2 = df1[b]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+a = ["Macbook Pro Laptop"]
+b = df1.Product_Cost.isin(a)
+df2 = df1[b]
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+a = ["34in Ultrawide Monitor", "Macbook Pro Laptop"]
+b = df1.Product_Name.isin(a)
+df2 = df1[b]
+print(df2)
+
+import pandas as pd
+df = pd.read_csv("sales4.csv")
+a = pd.unique(df.Product_Name)
+print(a)
+print(len(a))
+
+import pandas as pd
+df = pd.read_csv("sales4.csv")
+a = pd.unique(df.Customer_Name)
+print(a)
+print(len(a))
+
+import pandas as pd
+import numpy as np
+data = [
+['Shahid', 21, 40000],
+['Nireekshan', 22, 20000],
+['Veeru', 45, 90000],
+['Sumanth', 20, 95000],
+[np.nan, 2, 99000],
+['Prasad', 1, 41000]
+]
+c = ['Name', 'Age', 'Salary']
+df1 = pd.DataFrame(data, columns = c)
+print(df1)
+
+
+import pandas as pd
+import numpy as np
+data = [
+['Shahid', 21, 40000],
+['Nireekshan', 22, 20000],
+['Veeru', 45, 90000],
+['Sumanth', 20, 95000],
+[np.nan, 2, 99000],
+['Prasad', 1, 41000]
+]
+c = ['Name', 'Age', 'Salary']
+df1 = pd.DataFrame(data, columns = c)
+d = df1.Name.notnull()
+df2 = df1[d]
+print(df1)
+print()
+print(df2)
+
+import pandas as pd
+df = pd.read_csv("sales4.csv")
+print(df)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+df2 = df1.sort_values(by = "Product_Cost")
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+df2 = df1.sort_values(by = "Product_Cost")
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+df2 = df1.sort_values(by = "Customer_Id")
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+df2 = df1.sort_values(by = "Customer_Id", ascending = False)
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+df2 = df1.sort_values(by = "Customer_Id", ascending = 0)
+print(df2)
+
+import pandas as pd
+df1 = pd.read_csv("sales4.csv")
+df2 = df1.sort_values(by = "Customer_Name")
+print(df2)
+
+import pandas as pd
+d = {
+'Order id': [11, 21, 31],
+'Customer name': ['Kedar', 'Nireekshan', 'Daniel'],
+'Product': ['iPhone 11','hTC', 'macbook']
+}
+i = [555, 444, 333]
+df1 = pd.DataFrame(d, index = i)
+df2 = df1.sort_index()
+print(df1)
+print()
+print(df2)
 
