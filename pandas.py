@@ -2099,6 +2099,311 @@ print(df1.head())
 print()
 print(df2.head())
 
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv')
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates = ['Pur_Date'])
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv')
+df['Pur_Date'] = pd.to_datetime(df['Pur_Date'])
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv')
+df['Pur_Date'] = df['Pur_Date'].astype('datetime64[ns]')
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+data = {
+'Product': ['Samsung', 'iPhone', 'Motorola'],
+'Status': ['Success', 'Success', 'Failed'],
+'Cost': [10000, 50000, 15000],
+'PurDate': ['20190902','20190913','20190921'],
+}
+df = pd.DataFrame(data)
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+data = {
+'Product': ['Samsung', 'iPhone', 'Motorola'],
+'Status': ['Success', 'Success', 'Failed'],
+'Cost': [10000, 50000, 15000],
+'PurDate': ['20190902','20190913','20190921'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+
+data = {
+"Product": ["Samsung", "iPhone", "Motorola"],
+"Status": ["Success", "Success", "Failed"],
+"Cost": [10000, 50000, 15000],
+"PurDate": ['02092019','13092019','21092019'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'], format = '%d%m%Y')
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+data = {
+"Product": ["Samsung", "iPhone", "Motorola"],
+"Status": ["Success", "Success", "Failed"],
+"Cost": [10000, 50000, 15000],
+"PurDate": ['02Sep2019','13Sep2019','21Sep2019'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+data = {
+"Product": ["Samsung", "iPhone", "Motorola"],
+"Status": ["Success", "Success", "Failed"],
+"Cost": [10000, 50000, 15000],
+"PurDate": ['02Sep2019','13Sep2019','21Sep2019'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'], format = '%d%b%Y')
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+data = {
+"Product": ["Samsung", "iPhone", "Motorola"],
+"Status": ["Success", "Success", "Failed"],
+"Cost": [10000, 50000, 15000],
+"PurDate": ['02-Sep-2019','13-Sep-2019','21-Sep-2019'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+data = {
+"Product": ["Samsung", "iPhone", "Motorola"],
+"Status": ["Success", "Success", "Failed"],
+"Cost": [10000, 50000, 15000],
+"PurDate":
+['20190902093000','20190913093000','20190921200000'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+data = {
+"Product": ["Samsung", "iPhone", "Motorola"],
+"Status": ["Success", "Success", "Failed"],
+"Cost": [10000, 50000, 15000],
+
+"PurDate": ['02-Sep-2019','Here date is missing','21-Sep-2019']
+
+}
+df = pd.DataFrame(data)
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+data = {
+"Product": ["Samsung", "iPhone", "Motorola"],
+"Status": ["Success", "Success", "Failed"],
+"Cost": [10000, 50000, 15000],
+
+"PurDate": ['02-Sep-2019','Here date is missing','21-Sep-2019']
+
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+data = {
+"Product": ["Samsung", "iPhone", "Motorola"],
+"Status": ["Success", "Success", "Failed"],
+"Cost": [10000, 50000, 15000],
+
+"PurDate": ['02-Sep-2019','Here date is missing','21-Sep-2019']
+
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'], errors="coerce")
+print(df.head())
+print()
+print(df.dtypes)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates=['Pur_Date'])
+start = df['Pur_Date'] > '2019-1-1 01:00:00'
+end = df['Pur_Date'] < '2019-1-1 05:00:00'
+result = df[start & end]
+print(result)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates=['Pur_Date'])
+print(df)
+print(df.head())
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates = ['Pur_Date'])
+new_df = df.set_index("Pur_Date")
+days_10 = new_df.last("10D")
+print(days_10)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates = ['Pur_Date'])
+new_df = df.set_index("Pur_Date")
+days_20 = new_df.last("20D")
+print(days_20)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates = ['Pur_Date'])
+new_df = df.set_index("Pur_Date")
+days_30 = new_df.last("30D")
+print(days_30)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates = ['Pur_Date'])
+new_df = df.set_index("Pur_Date")
+days_40 = new_df.last("40D")
+print(days_40)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates = ['Pur_Date'])
+new_df = df.set_index("Pur_Date")
+month_1 = new_df.last("1M")
+print(month_1)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates = ['Pur_Date'])
+new_df = df.set_index("Pur_Date")
+year_1 = new_df.last("1Y")
+print(year_1)
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates = ['Pur_Date'])
+df['year'] = df['Pur_Date'].dt.year
+df['month'] = df['Pur_Date'].dt.month
+df['day'] = df['Pur_Date'].dt.day
+print(df.head())
+
+
+import pandas as pd
+df = pd.read_csv('sales7_dates.csv', parse_dates = ['Pur_Date'])
+df['year'] = df['Pur_Date'].dt.year
+df['month'] = df['Pur_Date'].dt.month
+df['day'] = df['Pur_Date'].dt.day
+df['hour'] = df['Pur_Date'].dt.hour
+df['minute'] = df['Pur_Date'].dt.minute
+print(df.head())
+
+import pandas as pd
+data = {
+'Product': ['Samsung', 'iPhone', 'Motorola'],
+'Status': ['Success', 'Success', 'Failed'],
+'Cost': [10000, 50000, 15000],
+'PurDate': ['2018-01-01','2018-01-02','2018-01-03'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df["PurDate"].dt.day_name())
+
+import pandas as pd
+data = {
+'Product': ['Samsung', 'iPhone', 'Motorola'],
+'Status': ['Success', 'Success', 'Failed'],
+'Cost': [10000, 50000, 15000],
+'PurDate': ['2018-01-01','2018-01-02','2018-01-03'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df["PurDate"].dt.weekday)
+
+import pandas as pd
+data = {
+'Product': ['Samsung', 'iPhone', 'Motorola'],
+'Status': ['Success', 'Success', 'Failed'],
+'Cost': [10000, 50000, 15000],
+'PurDate': ['2018-01-01','2018-01-02','2018-01-03'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df["PurDate"].dt.time)
+
+import pandas as pd
+data = {
+'Product': ['Samsung', 'iPhone', 'Motorola'],
+'Status': ['Success', 'Success', 'Failed'],
+'Cost': [10000, 50000, 15000],
+'PurDate': ['2018-01-01','2018-01-02','2018-01-03'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df["PurDate"].dt.date)
+
+import pandas as pd
+data = {
+'Product': ['Samsung', 'iPhone', 'Motorola'],
+'Status': ['Success', 'Success', 'Failed'],
+'Cost': [10000, 50000, 15000],
+'PurDate': ['2018-01-01','2018-01-02','2018-01-03'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df["PurDate"].dt.month)
+
+import pandas as pd
+data = {
+'Product': ['Samsung', 'iPhone', 'Motorola'],
+'Status': ['Success', 'Success', 'Failed'],
+'Cost': [10000, 50000, 15000],
+'PurDate': ['2018-01-01','2018-01-02','2018-01-03'],
+}
+df = pd.DataFrame(data)
+df['PurDate'] = pd.to_datetime(df['PurDate'])
+print(df.head())
+print()
+print(df["PurDate"].dt.year)
+
 import os
 path = "./daniel"
 all_files = os.listdir(path)
